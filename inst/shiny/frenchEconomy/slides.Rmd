@@ -1,0 +1,14 @@
+---
+output:
+  pdf_document: default
+geometry: "left=1.5cm,right=1.5cm,top=2cm,bottom=2cm"
+params: 
+  list_graph:
+    value: list_graph
+classoption: landscape
+---
+  
+  
+```{r, echo = FALSE, eval = TRUE, fig.width = 15, fig.height = 10, fig.align = "center"}
+invisible(lapply(list_plot_slides, print))
+```
