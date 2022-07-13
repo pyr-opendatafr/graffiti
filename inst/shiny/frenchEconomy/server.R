@@ -123,7 +123,7 @@ shinyServer(function(input, output, session) {
 
     list_tab[[length(list_tab)+1]] =
       tabPanel(title = "Catalogue",
-               box(
+               shinydashboard::box(
                  width = "100%",
                  DT::dataTableOutput("catalogue", width = "100%", height = "75vh")
                ))
@@ -254,7 +254,7 @@ observeEvent({
 
   list_tab[[length(list_tab)+1]] =
     tabPanel(title = get_label("idbank_list", lang = lang_selected),
-             box(
+             shinydashboard::box(
                width = "100%",
                DT::dataTableOutput("idbank_list", width = "100%", height = "75vh")
              ))
@@ -449,7 +449,7 @@ observeEvent({
 
   list_tab[[length(list_tab)+1]] =
     tabPanel(title = get_label("idbank_list", lang = lang_selected),
-             box(
+             shinydashboard::box(
                width = "100%",
                DT::dataTableOutput("idbank_list", width = "100%", height = "75vh")
              ))
@@ -546,7 +546,7 @@ observeEvent({
 
     list_tab[[length(list_tab)+1]] =
       tabPanel(title = get_label("idbank_list", lang = lang_selected),
-               box(
+               shinydashboard::box(
                  width = "100%",
                  DT::dataTableOutput("idbank_list", width = "100%", height = "75vh")
                ))
@@ -733,7 +733,7 @@ observeEvent({
       if(!get_interactive_plot()){
         
         tab = tabPanel(title = get_label("plot_catalogue", lang = lang_selected),
-                       box(
+                       shinydashboard::box(
                          width = "100%",
                          plotOutput(gg_name, width = "100%", height = "80vh")
                        ))
@@ -743,7 +743,7 @@ observeEvent({
         output[["plotly_requested"]] <- plotly::renderPlotly({gg_plotly(data, lang = lang_selected)})
         
         tab =   tabPanel(title = get_label("plot_catalogue", lang = lang_selected),
-                         box(
+                         shinydashboard::box(
                            width = "100%",
                            plotlyOutput("plotly_requested", width = "100%", height = "80vh")
                          ))
@@ -780,7 +780,7 @@ observeEvent({
       
       
       tab_data =     tabPanel(title = get_label("data_table", lang = lang_selected),
-                              box(
+                              shinydashboard::box(
                                 width = "100%",
                                 DT::dataTableOutput("data_table", width = "100%", height = "75vh")
                               ))
@@ -854,25 +854,25 @@ observeEvent({
 
       list_tab[[length(list_tab)+1]] =
         tabPanel(title = "Catalogue",
-                 box(
+                 shinydashboard::box(
                    width = "100%",
                    DT::dataTableOutput("catalogue", width = "100%", height = "75vh")
                  ))
       
       list_tab[[length(list_tab)+1]] =
         tabPanel(title = get_label("plot_catalogue", lang = lang_selected),
-                 box(
+                 shinydashboard::box(
                    width = "100%",
                    plotOutput(paste0(gg_selected, "_plot"), width = "100%", height = "80vh")
                  ))
       
       list_tab[[length(list_tab)+1]] =
         tabPanel(title = "Code",
-                 box(
+                 shinydashboard::box(
                    width = "100%",
                    renderPrint({print(gg_selected);get(gg_selected)})
                  ),
-                 box(
+                 shinydashboard::box(
                    width = "100%",
                    renderPrint({print("add_style");add_style})
                  )

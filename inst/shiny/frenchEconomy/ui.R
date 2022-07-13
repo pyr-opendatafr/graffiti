@@ -17,13 +17,11 @@ css_data_table <- HTML(
 )
 
 shinyUI(
-  dashboardPagePlus(
-    enable_preloader = F,
-    dashboardHeaderPlus(
+  dashboardPage(
+    dashboardHeader(
       title = div(img(src="assets/graffiti.png", width="70%"), ""),
                         titleWidth = 285,
-                        enable_rightsidebar = FALSE,
-                        left_menu = tagList(
+                        leftUi = tagList(
 
                           div(id = "lang_en",
                               img(src = "assets/gb.svg", style="width: 25px", align = "right")
