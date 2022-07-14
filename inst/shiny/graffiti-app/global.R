@@ -17,6 +17,7 @@ library(RColorBrewer)
 library(ggthemes)
 library(tidyr)
 library(insee)
+library(graffiti)
 
 Print = function(x){
   obj_name = deparse(substitute(x))
