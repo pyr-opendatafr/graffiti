@@ -1,5 +1,6 @@
 
 #' @importFrom rlang ".data"
+#' @export
 get_idbank_list2 = function(..., dataset = NULL){
   
   idbank_list_internal = insee:::idbank_list_internal

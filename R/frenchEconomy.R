@@ -4,7 +4,7 @@
 #' @examples
 #' \donttest{
 #' # run R-Shiny dashboard
-#' frenchEconomy()
+#' graffiti()
 #' }
 #' @export
 graffiti <- function() {

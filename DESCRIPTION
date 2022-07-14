@@ -32,7 +32,8 @@ Imports:
   insee,
   png,
   grid,
-  purrr
+  purrr,
+  tidyselect
 Depends: R (>= 2.10)
 Suggests:
   maptools,
