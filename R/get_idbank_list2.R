@@ -1,4 +1,3 @@
-
 #' @importFrom rlang ".data"
 #' @export
 get_idbank_list2 = function(..., dataset = NULL){
