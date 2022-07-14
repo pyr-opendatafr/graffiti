@@ -318,7 +318,7 @@ observeEvent({
 
     
     idbank_list_from_dataset =
-      insee::get_idbank_list(dataset_selected_name) %>%
+      get_idbank_list2(dataset_selected_name) %>%
       pull(idbank)
 
     updateSelectizeInput(session, 'idbank_picker',
@@ -327,7 +327,7 @@ observeEvent({
 
 
     idbank_list_selected =
-      insee::get_idbank_list(dataset_selected_name) %>% 
+      get_idbank_list2(dataset_selected_name) %>% 
       insee::clean_table()
     
     if(lang_selected == "en"){

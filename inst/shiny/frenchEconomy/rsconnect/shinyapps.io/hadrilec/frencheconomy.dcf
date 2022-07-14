@@ -1,0 +1,10 @@
+name: frencheconomy
+title:
+username:
+account: hadrilec
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6641945
+bundleId: 6098352
+url: https://hadrilec.shinyapps.io/frencheconomy/
+when: 1657812158.17384

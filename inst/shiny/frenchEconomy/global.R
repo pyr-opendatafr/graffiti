@@ -23,9 +23,10 @@ Print = function(x){
   cat(file = stderr(), obj_name, ":", x, "\n")
 }
 
-idbank_list = insee::get_idbank_list()
+idbank_list = get_idbank_list2()
 # idbank_list = insee:::idbank_list
-dataset_list = insee::get_dataset_list()
+dataset_list = insee:::dataset_list_internal
+# dataset_list = insee::get_dataset_list()
 
 id = insee:::idbank_list_internal
 
