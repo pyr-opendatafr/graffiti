@@ -271,16 +271,16 @@ plot_table[nrow(plot_table)+1,] = c("air_traffic",
 
 plot_table = plot_table[which(!is.na(plot_table[,"id"])),]
 
-link_app_plot = system.file("shiny/frenchEconomy/plot", package = "graffiti")
+link_app_plot = system.file("shiny/graffiti-app/plot", package = "graffiti")
 
 list_file = file.path(link_app_plot, list.files(link_app_plot, pattern= ".R$"))
 for(plot_file in list_file){
   source(plot_file)
 }
 
-slides_rmd_file = system.file("shiny/frenchEconomy/slides.Rmd", package = "graffiti")
+slides_rmd_file = system.file("shiny/graffiti-app/slides.Rmd", package = "graffiti")
 
-# slides_rmd_file = system.file("./inst/shiny/frenchEconomy/slides.Rmd", package = "graffiti")
+# slides_rmd_file = system.file("./inst/shiny/graffiti-app/slides.Rmd", package = "graffiti")
 #
 # last_release =
 #   get_last_release() %>%
