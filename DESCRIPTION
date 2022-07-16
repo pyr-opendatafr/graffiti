@@ -44,4 +44,4 @@ Suggests:
   viridis,
   treemapify
 NeedsCompilation: no
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.0
