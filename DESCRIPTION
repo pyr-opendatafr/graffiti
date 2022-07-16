@@ -5,7 +5,7 @@ Version: 0.1.0
 Authors@R: 
   c(person("Hadrien", "Leclerc", email = "leclerc.hadrien@gmail.com",
   role = c("aut", "cre")),
-    person("Julien", 'Desclodure', role = "auth")
+    person("Julien", 'Desclodure', role = "auth"),
     person("INSEE", role = "cph"))
 Author: Hadrien Leclerc [aut, cre], INSEE [cph]
 Maintainer: Hadrien Leclerc <leclerc.hadrien@gmail.com>
