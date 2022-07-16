@@ -16,7 +16,7 @@ This package is a contribution to reproducible research and public data transpar
 # Get the development version from GitHub
 # install.packages("devtools")
 # devtools::install_github("pyr-opendatafr/R-Insee-Data")
-# devtools::install_github("hadrilec/graffiti-poc")
+# devtools::install_github("pyr-opendatafr/graffiti-poc")
 
 library(graffiti)
 
