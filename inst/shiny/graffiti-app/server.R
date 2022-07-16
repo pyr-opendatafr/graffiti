@@ -723,14 +723,15 @@ observeEvent({
         gg = gg + guides(colour = guide_legend(ncol = 1))
       }
       
-      gg = gg %>% add_style(lang = lang_selected)
-      
-      # gg_current(gg)
-      list_plot_selected[[gg_name]] = gg
-      
-      output[[gg_name]] <- renderPlot({gg})
       
       if(!get_interactive_plot()){
+        
+        gg = gg %>% add_style(lang = lang_selected)
+        
+        # gg_current(gg)
+        list_plot_selected[[gg_name]] = gg
+        
+        output[[gg_name]] <- renderPlot({gg})
         
         tab = tabPanel(title = get_label("plot_catalogue", lang = lang_selected),
                        shinydashboard::box(
@@ -740,7 +741,11 @@ observeEvent({
         
       }else{
         
-        output[["plotly_requested"]] <- plotly::renderPlotly({gg_plotly(data, lang = lang_selected)})
+        if (!get_one_plot()){
+          output[["plotly_requested"]] <- plotly::renderPlotly({gg_plotly(data, lang = lang_selected)})
+        }else {
+          output[["plotly_requested"]] <- plotly::renderPlotly({gg_plotly_one_plot(data, lang = lang_selected)})
+        }
         
         tab =   tabPanel(title = get_label("plot_catalogue", lang = lang_selected),
                          shinydashboard::box(
