@@ -36,4 +36,4 @@ All contributions are welcome !!
 
 ## Support
 
-Feel free to open an issue with any question about this package using <https://github.com/hadrilec/graffiti-poc/issues> Github repository.
+Feel free to open an issue with any question about this package using <https://github.com/pyr-opendatafr/graffiti/issues> Github repository.
