@@ -9,7 +9,7 @@ Authors@R:
           role = c("aut", "cre")),
     person(given="Julien", 
           family='Desclodure', 
-          role = "auth"),
+          role = "aut"),
     person(given="INSEE", role = "cph"))
 Description: R-Shiny Dashboard Displaying Data From INSEE.
 License: GPL-3
