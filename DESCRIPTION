@@ -11,7 +11,6 @@ Authors@R:
           family='Desclodure', 
           role = "auth"),
     person(given="INSEE", role = "cph"))
-Maintainer: Hadrien Leclerc <leclerc.hadrien@gmail.com>
 Description: R-Shiny Dashboard Displaying Data From INSEE.
 License: GPL-3
 Encoding: UTF-8
