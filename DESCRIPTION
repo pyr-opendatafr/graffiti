@@ -3,11 +3,14 @@ Type: Package
 Title: R-Shiny Dashboard Displaying Data From INSEE
 Version: 0.1.0
 Authors@R: 
-  c(person("Hadrien", "Leclerc", email = "leclerc.hadrien@gmail.com",
-  role = c("aut", "cre")),
-    person("Julien", 'Desclodure', role = "auth"),
-    person("INSEE", role = "cph"))
-Author: Hadrien Leclerc [aut, cre], Julien Desclodure [auth], INSEE [cph]
+  c(person(given="Hadrien", 
+          family="Leclerc", 
+          email = "leclerc.hadrien@gmail.com",
+          role = c("aut", "cre")),
+    person(given="Julien", 
+          family='Desclodure', 
+          role = c("auth")),
+    person(given="INSEE", role = c("cph")))
 Maintainer: Hadrien Leclerc <leclerc.hadrien@gmail.com>
 Description: R-Shiny Dashboard Displaying Data From INSEE.
 License: GPL-3

@@ -44,7 +44,7 @@ id = insee:::idbank_list_internal %>%
 id_en = id %>%
   select(nomflow, idbank, cleFlow, title_en, dplyr::starts_with("dim")) %>% 
   dplyr::rename(title = title_en)
-# id_en2=id_en[1:10000,]
+
 id_fr = id %>%
   select(nomflow, idbank, cleFlow, title_fr, dplyr::starts_with("dim")) %>% 
   dplyr::rename(title = title_fr)
