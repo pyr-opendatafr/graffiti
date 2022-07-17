@@ -31,12 +31,20 @@ idbank_list = get_idbank_list2()
 dataset_list = insee:::dataset_list_internal
 # dataset_list = insee::get_dataset_list()
 
-id = insee:::idbank_list_internal
+list_order_stopped_series = c('FALSE', 'TRUE')
+
+id = insee:::idbank_list_internal %>% 
+  mutate(title_en_upper = toupper(title_en)) %>% 
+  mutate(SERIE_ARRETEE = SERIE_ARRETEE) %>% 
+  mutate(SERIE_ARRETEE2 = case_when(str_detect(title_en_upper, 'STOPPED SERIES') ~ 'TRUE',
+                                    is.na(SERIE_ARRETEE) ~ 'FALSE')) %>% 
+  mutate(SERIE_ARRETEE2 = factor(SERIE_ARRETEE2, levels = list_order_stopped_series)) %>% 
+  arrange(SERIE_ARRETEE2)
 
 id_en = id %>%
   select(nomflow, idbank, cleFlow, title_en, dplyr::starts_with("dim")) %>% 
   dplyr::rename(title = title_en)
-
+# id_en2=id_en[1:10000,]
 id_fr = id %>%
   select(nomflow, idbank, cleFlow, title_fr, dplyr::starts_with("dim")) %>% 
   dplyr::rename(title = title_fr)
