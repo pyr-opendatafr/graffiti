@@ -19,6 +19,8 @@ library(tidyr)
 library(insee)
 library(graffiti)
 
+options(warn=-1)
+
 Print = function(x){
   obj_name = deparse(substitute(x))
   cat(file = stderr(), obj_name, ":", x, "\n")
