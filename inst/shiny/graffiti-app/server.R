@@ -434,7 +434,17 @@ observeEvent({
   idbank_list_view(idbank_list_selected)
 
   
-  idbank_list_shown = idbank_list_selected %>%
+  if(lang_selected == "en"){
+    idbank_list_shown = 
+      idbank_list_selected %>%
+      select(!matches("(label_fr$|^title_fr$)"))
+  }else{
+    idbank_list_shown = 
+      idbank_list_selected %>%
+      select(!matches("(label_en$|^title_en$)"))
+  }
+  
+  idbank_list_shown = idbank_list_shown %>%
     DT::datatable(filter = "none", selection = c("multiple"),
                   options = list(pageLength = 100, scrollX = TRUE,
                                  autoWidth = TRUE,
@@ -531,7 +541,17 @@ observeEvent({
 
   idbank_list_view(idbank_list_selected)
 
-  idbank_list_shown = idbank_list_selected %>%
+  if(lang_selected == "en"){
+    idbank_list_shown = 
+      idbank_list_selected %>%
+      select(!matches("(label_fr$|^title_fr$)"))
+  }else{
+    idbank_list_shown = 
+      idbank_list_selected %>%
+      select(!matches("(label_en$|^title_en$)"))
+  }
+  
+  idbank_list_shown = idbank_list_shown %>%
     DT::datatable(filter = "none", selection = c("multiple"),
                   options = list(pageLength = 100, scrollX = TRUE,
                                  autoWidth = TRUE,
