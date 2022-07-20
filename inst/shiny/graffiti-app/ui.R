@@ -177,7 +177,8 @@ shinyUI(
                   '#idbank_list {cursor: pointer}'
                 ),
                 fluidRow(
-                uiOutput("list_tab2"))
+                  align = "center",
+                  uiOutput("list_tab2"))
                 )
       )
     )
