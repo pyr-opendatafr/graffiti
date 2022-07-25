@@ -5,10 +5,12 @@ graffiti R package
 
 *Experimental*
 
-This package contains an R-Shiny Dashboard Displaying Data From INSEE.
+This package contains an R-Shiny Dashboard Displaying Data From INSEE BDM database.
 This dashboard contains a library of pre-made plots and a plot generator.
+Graffiti app is a contribution to reproducible research and public data transparency.
+Under the hood, graffiti uses [insee](https://github.com/pyr-opendatafr/R-Insee-Data) R package.
 
-This package is a contribution to reproducible research and public data transparency.
+Have a look at the app : https://graffiti.lab.sspcloud.fr/
 
 ## Installation, Loading an Use
 
@@ -33,6 +35,11 @@ graffiti()
 ## Contributing
 
 All contributions are welcome !!
+
+## Deployment environment
+
+The graffiti app is built with a dedicated docker image available in a separate [repo](https://github.com/pyr-opendatafr/graffiti-env).
+Then, it is deployed thanks to [Onyxia datascience platform](https://onyxia.lab.sspcloud.fr/home)
 
 ## Support
 
