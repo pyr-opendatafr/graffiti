@@ -13,7 +13,7 @@ pib_current_price = function(lang = "en"){
   
   data = get_insee_idbank("010565709", "010565711", "010565731", "010565736",
                           "010565723", "010565724", "010565726") %>%
-    add_insee_metadata() %>% 
+    add_insee_metadata2() %>% 
     split_title() %>% 
     mutate(TITLE_FR = paste(OPERATION, "-", TITLE_FR1)) %>%
     mutate(TITLE_EN = paste(OPERATION, "-", TITLE_EN1)) %>%

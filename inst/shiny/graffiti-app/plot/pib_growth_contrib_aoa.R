@@ -6,7 +6,7 @@ pib_growth_contrib_aoa = function(lang = "en"){
     get_insee_idbank("010548515", "010548504", "010548518",
                      "010548519", "010548508", "010548514", "010548520", "010548513") %>%
     split_title(n_split = 4) %>%
-    add_insee_metadata() %>% 
+    add_insee_metadata2() %>% 
     mutate(TITLE_FR_adj = case_when(OPERATION != "P3" ~ paste(OPERATION, "-", TITLE_FR2),
                                     TRUE ~ as.character(paste(OPERATION, "-", TITLE_FR2, "-", TITLE_FR3))
     )) %>% 

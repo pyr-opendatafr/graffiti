@@ -2,7 +2,7 @@
 housing_construction = function(lang = "en"){
   
   idbank_list = 
-    get_idbank_list("CONSTRUCTION-LOGEMENTS") %>% 
+    get_idbank_list2("CONSTRUCTION-LOGEMENTS") %>% 
     filter(INDICATEUR == "NBRE_LOG_COM") %>% 
     filter(LOGEMENT == "0") %>%  
     filter(REF_AREA %in% c('FM', 'R44', 'R75', 'R28','R76', 'R84', 
@@ -12,7 +12,7 @@ housing_construction = function(lang = "en"){
   
   data = 
     get_insee_idbank(idbank_selected) %>% 
-    add_insee_metadata() %>% 
+    add_insee_metadata2() %>% 
     split_title()
   
   reg_order = 

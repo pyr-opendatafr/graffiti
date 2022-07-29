@@ -22,13 +22,13 @@ conso_produit_val = function(lang = "en"){
   # NPISHs, give rise to social transfers in kind receivable towards households.
   
   idbank_list = 
-    get_idbank_list("CNA-2014-CONSO-MEN") %>%
+    get_idbank_list2("CNA-2014-CONSO-MEN") %>%
     filter(str_detect(INDICATEUR, "^CNA_CONSO_MENAGES_FONCTION")) %>%
     filter(PRIX_REF == "VAL") %>%
     filter(nchar(CNA_PRODUIT) == 5)
   
   idbank_list_tot =
-    get_idbank_list("CNA-2014-CONSO-MEN") %>%
+    get_idbank_list2("CNA-2014-CONSO-MEN") %>%
     filter(str_detect(INDICATEUR, "^CNA_CONSO_MENAGES_FONCTION")) %>%
     filter(PRIX_REF == "VAL") %>%
     filter(CNA_PRODUIT %in% c("FONTOTAL")) #"FONDEP"
@@ -60,7 +60,7 @@ conso_produit_val = function(lang = "en"){
   data =
     get_insee_idbank(idbank_selected) %>%
     split_title(pattern = "-") %>% 
-    add_insee_metadata() %>% 
+    add_insee_metadata2() %>% 
     filter(DATE >= start_date_plot) %>% 
     order_last_value(col_to_order = c('TITLE_FR4', 'TITLE_EN4'))
   

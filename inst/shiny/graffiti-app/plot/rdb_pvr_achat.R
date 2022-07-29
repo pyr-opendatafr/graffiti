@@ -10,7 +10,7 @@ rdb_pvr_achat = function(lang = "en"){
   data = get_insee_idbank("010562201", "010562206", "010562202", "010562204", "010562203", 
                           "010562205", "010562212",
                           "010562211", "010562207", "010562209", "010562208", "010562210") %>% 
-    add_insee_metadata()
+    add_insee_metadata2()
   
   if(lang == "en"){
     

@@ -2,7 +2,7 @@
 air_traffic = function(lang = "en"){
   
   id_transport =
-    get_idbank_list('TRANSPORTS') %>%
+    get_idbank_list2('TRANSPORTS') %>%
     add_insee_title() %>%
     filter(!str_detect(title, 'Stopped series')) %>% 
     filter(TYPE_RESEAU == '140') %>%
@@ -32,10 +32,10 @@ air_traffic = function(lang = "en"){
   
   data = 
     get_insee_idbank(idbank_transport_selected) %>% 
-    split_title() %>% 
-    add_insee_metadata() %>% 
+    add_insee_metadata2() %>% 
     filter(DATE >= '2005-01-01') %>% 
-    order_last_value(col_to_order = c('LOCALISATION_label_en', 'LOCALISATION_label_fr'))
+    order_last_value(col_to_order = c('LOCALISATION_label_en',
+                                      'LOCALISATION_label_fr'))
   
   
   if(lang == "en"){
