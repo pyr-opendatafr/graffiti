@@ -36,8 +36,11 @@ shinyUI(
                           tags$style(
                             '#lang_fr {cursor: pointer}'
                           )
+                          # ,a(img(src = "assets/github.png", style="width: 25px", align = "right"),
+                          #   href="https://github.com/pyr-opendatafr/graffiti")
 
                         ),
+      
       dropdownMenu(type = "notifications",
                    headerText = '',
                    badgeStatus = "warning",
