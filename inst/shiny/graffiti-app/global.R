@@ -80,7 +80,7 @@ label_table[nrow(label_table)+1,] = c("catalog",
 label_table[nrow(label_table)+1,] = c("slides_title", "Cr\u00E9er une pr\U00E9sentation", "Make your slides")
 label_table[nrow(label_table)+1,] = c("slides_placeholder", "Ajouter le graphique à l'\u00E9cran", "Add the current plot")
 label_table[nrow(label_table)+1,] = c("slides_download",
-                                      "T\u00E9l\u00E9charger la pr\u00E9sentaion",
+                                      "T\u00E9l\u00E9charger la pr\u00E9sentation",
                                       "Download slides")
 
 label_table[nrow(label_table)+1,] = c("idbank_list",
