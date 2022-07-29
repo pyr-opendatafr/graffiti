@@ -193,6 +193,16 @@ plot_table = data.frame(
   dataset = NA,
   stringsAsFactors = FALSE)
 
+plot_table[nrow(plot_table)+1,] = c("inflation_contributions",
+                                    "Inflation et contributions",
+                                    "Inflation and contributions",
+                                    'IPC-2015')
+
+plot_table[nrow(plot_table)+1,] = c("inflation_contributions_energy",
+                                    "Inflation, contributions et \u00E9nergie",
+                                    "Inflation, contributions and energy",
+                                    'IPC-2015')
+
 plot_table[nrow(plot_table)+1,] = c("enquete_indus",
                                       "Enqu\U00EAtes dans l'industrie",
                                       "Surveys in industry",
@@ -278,6 +288,8 @@ plot_table[nrow(plot_table)+1,] = c("air_traffic",
                                     'Vols nationaux et internationaux',
                                     'Internal and international flights',
                                     'TRANSPORTS')
+
+
 
 plot_table = plot_table[which(!is.na(plot_table[,"id"])),]
 
