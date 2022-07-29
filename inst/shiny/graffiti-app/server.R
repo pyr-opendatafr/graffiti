@@ -615,6 +615,8 @@ observeEvent({
       if (!get_interactive_plot()){
         gg_name = paste0("plot_", gsub("-|:| |CET","", Sys.time()))
         gg_current_name(gg_name)
+      }else{
+        gg_current_name('')
       }
       
       output$growth_button <- renderUI({
