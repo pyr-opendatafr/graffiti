@@ -612,8 +612,10 @@ observeEvent({
         mutate(TITLE_EN = paste(TITLE_EN , "-", IDBANK)) %>%
         mutate(TITLE_FR = paste(TITLE_FR , "-", IDBANK))
       
-      gg_name = paste0("plot_", gsub("-|:| |CET","", Sys.time()))
-      gg_current_name(gg_name)
+      if (!get_interactive_plot()){
+        gg_name = paste0("plot_", gsub("-|:| |CET","", Sys.time()))
+        gg_current_name(gg_name)
+      }
       
       output$growth_button <- renderUI({
         prettyRadioButtons(
