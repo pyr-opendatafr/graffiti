@@ -78,6 +78,23 @@ shinyServer(function(input, output, session) {
                       tags$br(),
               get_label("warning_insee_data2", lang = lang_selected),
                       style = "display: inline-block; vertical-align: middle;")) 
+    
+    
+    output$AppDescriptionText <- renderText({get_label("AppDescriptionText", lang = lang_selected)})
+    
+    output$AppDescription <- renderUI(
+      shinydashboardPlus::box(
+        width = 12,
+        title = "Graffiti Description",
+        closable = FALSE,
+        status = "warning",
+        solidHeader = FALSE,
+        collapsible = FALSE,
+        textOutput("AppDescriptionText")
+      )
+      )
+      
+     
         
     
     })

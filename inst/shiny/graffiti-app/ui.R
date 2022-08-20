@@ -94,9 +94,22 @@ shinyUI(
                                             downloadButton("downloadSlides", label = textOutput("slides_download", inline = TRUE))
                                      )
                                    )
-                                 ) #cond panel 2
+                                   ,fluidRow(
+                                     column(12,align = "left", offset = 0,
+                                            
+                                            div(style="display: inline-block;vertical-align:bottom; width: 250px; margin: 25px",
+                                                uiOutput("AppDescription")),
+                                            
+                                            tags$head(tags$style("#AppDescriptionText{color: black;
+                                                   font-size: 20px;
+                                                   font-style: italic;
+                                                   }"))
+                                            
+                                     )
+                                   )
+                                 ) 
+                                #cond panel 2
                                  ,
-
                                  conditionalPanel(
                                    condition = "input.tabs_menu == 'sub_2'", #"input.tabs_menu == '3'"
                                    fluidRow(

@@ -168,6 +168,14 @@ label_table[nrow(label_table)+1,] = c("enhance_plot",
                                       "Am\u00E9liorer le graphique",
                                       "Export your plot")
 
+label_table[nrow(label_table)+1,] = c("AppDescriptionText",
+                                      "Ma super app",
+                                      paste0("Graffiti is an experimental R-Shiny Application \n",
+                                             "it helps users to have access to Insee macroeconomic data.",
+                                             "Either tap into the plots catalogue, or make your own plot!"))
+
+
+
 
 get_label = function(id, df = label_table, lang = "en"){
 
