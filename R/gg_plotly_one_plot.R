@@ -1,3 +1,7 @@
+#' gg_plotly_one_plot
+#' @description Interactive plot of multiple graphs
+#' @param data Data frame
+#' @param langf Language
 #' @importFrom magrittr "%>%"
 #' @export
 gg_plotly_one_plot = function(data, lang = "en"){
@@ -35,13 +39,13 @@ gg_plotly_one_plot = function(data, lang = "en"){
   fig <- 
     plotly::plot_ly(data, x = ~DATE, y = ~OBS_VALUE, color = ~IDBANK,
                     type = 'scatter', mode = "lines",
-                    text = ~paste(sprintf("%s", hovertext_date), DATE,
-                                  sprintf("%s", hovertext_value), round(OBS_VALUE, 2)),
-                    hoverinfo = "text",
+                    hovertemplate = paste('%{y:.2f}<extra></extra>'),
+                    textposition = 'outside',
                     name = ~get(NAME)) %>%
     plotly::config(displaylogo = FALSE, locale = lang) %>%
     plotly::layout(
-      legend = list(orientation = 'h', x=0, y=-0.22, xanchor = "left", yanchor = "top"),
+      hovermode = "x unified",
+      legend = list(orientation = 'h', x=0, y=-0.22, xanchor = "left", yanchor = "top", rm_nonfirst_gr = TRUE),
       xaxis = list(title = xlabel,
                    rangeslider = list(borderwidth = 1, thickness = 0.09,
                                       start = MIN_DATE, end = MAX_DATE),
@@ -60,7 +64,9 @@ gg_plotly_one_plot = function(data, lang = "en"){
                    yaxis = list(rangemode = "auto"),
                    type = "date"
       ),
-      yaxis = list(title = ylabel, autorange = T, fixedrange = F)
-    )
+      yaxis = list(title = ylabel, autorange = TRUE, fixedrange = FALSE)
+    ) %>%
+    add_style(lang = lang, interactive = TRUE)
+  
   return(fig)
 }
