@@ -39,7 +39,8 @@ gg_plotly_one_plot = function(data, lang = "en"){
   fig <- 
     plotly::plot_ly(data, x = ~DATE, y = ~OBS_VALUE, color = ~IDBANK,
                     type = 'scatter', mode = "lines",
-                    hovertemplate = paste('%{y:.2f}<extra></extra>'),
+                    hovertemplate = paste0(data$IDBANK, ' : %{y:.2f}<extra></extra> (', 
+                                           tolower(data$UNIT_MEASURE), ')'),
                     textposition = 'outside',
                     name = ~get(NAME)) %>%
     plotly::config(displaylogo = FALSE, locale = lang) %>%
